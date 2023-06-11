@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<student_details xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Q5_20BCE10342.xsd">
+    <student reg_no="20BCE10076">
+        <name>
+            <first_name>Rahul</first_name>
+            <last_name>Shekhar</last_name>
+        </name>
+        <department>Computer Science</department>
+        <address>VIT, BHOPAL</address>
+        <phone_number>111-1111</phone_number>
+    </student>
+    <student reg_no="20BCE10176">
+        <name>
+            <first_name>Aman</first_name>
+            <last_name>Yadav</last_name>
+        </name>
+        <department>API</department>
+        <address>VIT, BHOPAL</address>
+        <phone_number>823-1234</phone_number>
+    </student>
+    <student reg_no="20BCE10276">
+        <name>
+            <first_name>Raman</first_name>
+            <last_name>Singh</last_name>
+        </name>
+        <department>GU</department>
+        <address>VIT, BHOPAL</address>
+        <phone_number>189-1567</phone_number>
+    </student>
+</student_details>

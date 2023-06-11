@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Student Details</title>
+  <form>
+    <label for="phone">Registration Number:</label>
+    <input type="text" id="phone" name="phone" pattern="\d{3}-\d{4}" required>
+    <button type="submit">Submit</button>
+  </form>
+  
+	<script type="text/javascript">
+		window.onload = function() {
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					displayStudentDetails(this);
+				}
+			};
+			xhttp.open("GET", "Q5_20BCE10076.xml", true);
+			xhttp.send();
+		};
+
+		function displayStudentDetails(xml) {
+			var xmlDoc = xml.responseXML;
+			var table = "<tr><th>Registration Number</th><th>First Name</th><th>Last Name</th><th>Department</th><th>Address</th><th>Phone Number</th></tr>";
+			var students = xmlDoc.getElementsByTagName("student");
+			for (var i = 0; i < students.length; i++) {
+				var reg_no = students[i].getAttribute("reg_no");
+				var first_name = students[i].getElementsByTagName("first_name")[0].childNodes[0].nodeValue;
+				var last_name = students[i].getElementsByTagName("last_name")[0].childNodes[0].nodeValue;
+				var department = students[i].getElementsByTagName("department")[0].childNodes[0].nodeValue;
+				var address = students[i].getElementsByTagName("address")[0].childNodes[0].nodeValue;
+				var phone_number = students[i].getElementsByTagName("phone_number")[0].childNodes[0].nodeValue;
+				table += "<tr><td>" + reg_no + "</td><td>" + first_name + "</td><td>" + last_name + "</td><td>" + department + "</td><td>" + address + "</td><td>" + phone_number + "</td></tr>";
+			}
+			document.getElementById("student_table").innerHTML = table;
+		}
+	</script>
+</head>
+<body>
+	<h1>Student Details</h1>
+	<table id="student_table"></table>
+</body>
+</html>
